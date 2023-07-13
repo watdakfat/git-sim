@@ -18,6 +18,7 @@ class Fetch(GitSimBaseCommand):
         super().__init__()
         self.remote = remote
         self.branch = branch
+        settings.max_branches_per_commit = 0
         settings.max_branches_per_commit = 2
 
         if self.remote and self.remote not in self.repo.remotes:
