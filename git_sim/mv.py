@@ -56,7 +56,6 @@ class Mv(GitSimBaseCommand):
         thirdColumnFileNames,
         firstColumnArrowMap={},
         secondColumnArrowMap={},
-        thirdColumnArrowMap={},
     ):
         if self.file in [x.a_path for x in self.repo.index.diff("HEAD")]:
             secondColumnFileNames.add(self.file)
