@@ -19,6 +19,7 @@ class Pull(GitSimBaseCommand):
         super().__init__()
         self.remote = remote
         self.branch = branch
+        self.branch = branch
         settings.max_branches_per_commit = 2
 
         if self.remote and self.remote not in self.repo.remotes:
@@ -52,6 +53,7 @@ class Pull(GitSimBaseCommand):
         try:
             self.repo.git.pull(self.remote, self.branch)
             head_commit = self.get_commit()
+            self.parse_commits(head_commit)
             self.parse_commits(head_commit)
             self.recenter_frame()
             self.scale_frame()

@@ -19,6 +19,7 @@ class Checkout(GitSimBaseCommand):
             if self.branch in self.repo.heads:
                 print(
                     "git-sim error: can't create new branch '"
+                    "git-sim error: can't create new branch '"
                     + self.branch
                     + "', it already exists"
                 )
@@ -57,6 +58,7 @@ class Checkout(GitSimBaseCommand):
 
         try:
             self.selected_branches.append(self.repo.active_branch.name)
+            self.selected_branches.append(self.repo.active_branch.name)
         except TypeError:
             pass
 
@@ -85,6 +87,7 @@ class Checkout(GitSimBaseCommand):
                 if len(commits_in_range) <= self.n:
                     self.parse_commits(head_commit)
                     reset_head_to = branch_commit.hexsha
+                    reset_head_to = branch_commit.hexsha
                     self.recenter_frame()
                     self.scale_frame()
                     self.reset_head(reset_head_to)
@@ -108,6 +111,7 @@ class Checkout(GitSimBaseCommand):
                 else:
                     self.draw_ref(branch_commit, self.topref)
             else:
+                self.parse_commits(head_commit)
                 self.parse_commits(head_commit)
                 self.parse_commits(branch_commit, shift=4 * m.DOWN)
                 self.center_frame_on_commit(branch_commit)

@@ -29,6 +29,8 @@ class Fetch(GitSimBaseCommand):
         if not settings.stdout and not settings.output_only_path and not settings.quiet:
             print(
                 f"{settings.INFO_STRING } {type(self).__name__.lower()} {self.remote if self.remote else ''} {self.branch if self.branch else ''}"
+                # f"{settings.INFO_STRING } {type(self).__name__.lower()} {self.remote if self.remote else ''} {self.branch if self.branch else ''}"
+                f"{settings.INFO_STRING } {type(self).__name__.lower()} {self.remote if self.remote else ''} {self.branch if self.branch else ''}"
             )
 
         if not self.remote:
@@ -41,7 +43,7 @@ class Fetch(GitSimBaseCommand):
         git_root = self.repo.git.rev_parse("--show-toplevel")
         repo_name = os.path.basename(self.repo.working_dir)
         new_dir = os.path.join(tempfile.gettempdir(), "git_sim", repo_name)
-
+        start_parse_from_remote = True
         orig_remotes = self.repo.remotes
         self.repo = git.Repo.clone_from(git_root, new_dir, no_hardlinks=True)
         for r1 in orig_remotes:
@@ -80,7 +82,9 @@ class Fetch(GitSimBaseCommand):
         self.recenter_frame()
         self.scale_frame()
         self.color_by()
+        # fetched branch is behind local branch
         self.fadeout()
         self.show_outro()
         self.repo.git.clear_cache()
+        self.show_outro()
         shutil.rmtree(new_dir, onerror=self.del_rw)
