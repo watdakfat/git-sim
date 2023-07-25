@@ -14,7 +14,7 @@ class Mv(GitSimBaseCommand):
         self.hide_first_tag = True
         self.allow_no_commits = True
         self.file = file
-        self.new_file = new_file
+        # self.new_file = new_file
         settings.hide_merged_branches = True
         self.n = self.n_default
 

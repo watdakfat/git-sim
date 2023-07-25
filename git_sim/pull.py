@@ -70,6 +70,8 @@ class Pull(GitSimBaseCommand):
 
                 head_commit = self.get_commit()
                 self.parse_commits(head_commit)
+                self.parse_commits(head_commit)
+                self.recenter_frame()
                 self.recenter_frame()
                 self.scale_frame()
 
@@ -103,10 +105,10 @@ class Pull(GitSimBaseCommand):
         self,
         firstColumnFileNames,
         secondColumnFileNames,
-        thirdColumnFileNames,
-        firstColumnArrowMap={},
-        secondColumnArrowMap={},
-        thirdColumnArrowMap={},
+        # thirdColumnFileNames,
+        # firstColumnArrowMap={},
+        # secondColumnArrowMap={},
+        # thirdColumnArrowMap={},
     ):
         for filename in self.conflicted_files:
             secondColumnFileNames.add(filename)

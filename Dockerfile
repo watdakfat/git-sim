@@ -1,6 +1,6 @@
 FROM python:3
 
-WORKDIR /usr/src/git-sim
+WORKDIR /usr/src/git-sim/666
 
 RUN apt update
 
