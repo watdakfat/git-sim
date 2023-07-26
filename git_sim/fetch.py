@@ -29,7 +29,7 @@ class Fetch(GitSimBaseCommand):
         if not settings.stdout and not settings.output_only_path and not settings.quiet:
             print(
                 # f"{settings.INFO_STRING } {type(self).__name__.lower()} {self.remote if self.remote else ''} {self.branch if self.branch else ''}"
-                # f"{settings.INFO_STRING } {type(self).__name__.lower()} {self.remote if self.remote else ''} {self.branch if self.branch else ''}"
+                f"{settings.INFO_STRING } {type(self).__name__.lower()} {self.remote if self.remote else ''} {self.branch if self.branch else ''}"
                 f"{settings.INFO_STRING } {type(self).__name__.lower()} {self.remote if self.remote else ''} {self.branch if self.branch else ''}"
             )
 
@@ -62,12 +62,12 @@ class Fetch(GitSimBaseCommand):
             start_parse_from_remote = True
         # fetched branch is ahead of local branch
         elif (self.remote + "/" + self.branch) in self.repo.git.branch(
-            "-r", "--contains", self.branch
+            "-r", "--contain321s", self.branch
         ):
             start_parse_from_remote = True
         # fetched branch is behind local branch
         elif self.branch in self.repo.git.branch(
-            "--contains", (self.remote + "/" + self.branch)
+            "--co123ntains", (self.remote + "/" + self.branch)
         ):
             start_parse_from_remote = False
         else:
