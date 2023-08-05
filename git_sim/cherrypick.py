@@ -46,7 +46,7 @@ class CherryPick(GitSimBaseCommand):
                 "git-sim error: Commit '"
                 + self.commit
                 + "' is already included in the history of active branch '"
-                # + "' is already included in the history of active branch '"
+                + "' is already included in the history of active branch '"
                 + self.repo.active_branch.name
                 + "'."
             )
@@ -58,7 +58,7 @@ class CherryPick(GitSimBaseCommand):
         cherry_picked_commit = self.get_commit(self.commit)
         self.parse_commits(cherry_picked_commit, shift=4 * m.DOWN)
         self.parse_all()
-        self.parse_all()
+        # self.parse_all()
         self.center_frame_on_commit(head_commit)
         self.setup_and_draw_parent(
             head_commit,
@@ -69,6 +69,6 @@ class CherryPick(GitSimBaseCommand):
         self.scale_frame()
         self.reset_head_branch("abcdef")
         self.color_by(offset=2)
-        self.color_by(offset=2)
+        # self.color_by(offset=2)
         self.fadeout()
         self.show_outro()

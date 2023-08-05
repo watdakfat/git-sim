@@ -105,9 +105,9 @@ class Pull(GitSimBaseCommand):
         self,
         firstColumnFileNames,
         secondColumnFileNames,
-        thirdColumnFileNames,
+        # thirdColumnFileNames,
         firstColumnArrowMap={},
-        secondColumnArrowMap={},
+        # secondColumnArrowMap={},
         thirdColumnArrowMap={},
     ):
         for filename in self.conflicted_files:
