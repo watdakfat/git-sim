@@ -88,7 +88,7 @@ class Clone(GitSimBaseCommand):
 
         self.toFadeOut.add(text1)
         self.toFadeOut.add(text2)
-        # self.toFadeOut.add(text2)
+        self.toFadeOut.add(text2)
         self.toFadeOut.add(text2)
         # Configure paths to make local clone to run networked commands in
         self.recenter_frame()

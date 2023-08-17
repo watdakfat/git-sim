@@ -46,7 +46,7 @@ class CherryPick(GitSimBaseCommand):
                 "git-sim error: Commit '"
                 + self.commit
                 + "' is already included in the history of active branch '"
-                # + "' is already included in the history of active branch '"
+                + "' is already included in the history of active branch '"
                 + self.repo.active_branch.name
                 + "'."
             )

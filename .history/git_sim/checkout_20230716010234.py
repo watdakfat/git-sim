@@ -66,7 +66,6 @@ class Checkout(GitSimBaseCommand):
         if not settings.stdout and not settings.output_only_path and not settings.quiet:
             print(
                 f"{settings.INFO_STRING } {type(self).__name__.lower()}{' -b' if self.b else ''} {self.branch}"
-                f"{settings.INFO_STRING } {type(self).__name__.lower()}{' -b' if self.b else ''} {self.branch}"
             )
 
         self.show_intro()
@@ -77,14 +76,12 @@ class Checkout(GitSimBaseCommand):
             self.parse_commits(head_commit)
             self.recenter_frame()
             self.scale_frame()
-            self.draw_ref(head_commit, self.topref,
-                          text=self.branch, color=m.GREEN)
+            self.draw_ref(head_commit, self.topref, text=self.branch, color=m.GREEN)
         else:
             branch_commit = self.get_commit(self.branch)
 
             if self.is_ancestor:
-                commits_in_range = list(
-                    self.repo.iter_commits(self.branch + "..HEAD"))
+                commits_in_range = list(self.repo.iter_commits(self.branch + "..HEAD"))
 
                 # branch is reached from HEAD, so draw everything
                 if len(commits_in_range) <= self.n:
