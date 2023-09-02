@@ -37,7 +37,7 @@ class Mv(GitSimBaseCommand):
 
         self.show_intro()
         self.parse_commits()
-        # self.recenter_frame()
+        self.recenter_frame()
         self.scale_frame()
         self.vsplit_frame()
         self.setup_and_draw_zones(

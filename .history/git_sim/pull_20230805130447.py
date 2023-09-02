@@ -66,8 +66,7 @@ class Pull(GitSimBaseCommand):
                 settings.hide_merged_branches = True
 
                 # Get list of conflicted filenames
-                self.conflicted_files = re.findall(
-                    r"Merge conflict in (.+)", e.stdout)
+                self.conflicted_files = re.findall(r"Merge conflict in (.+)", e.stdout)
 
                 head_commit = self.get_commit()
                 self.parse_commits(head_commit)
@@ -106,9 +105,9 @@ class Pull(GitSimBaseCommand):
         self,
         firstColumnFileNames,
         secondColumnFileNames,
-        thirdColumnFileNames,
+        # thirdColumnFileNames,
         firstColumnArrowMap={},
-        secondColumnArrowMap={},
+        # secondColumnArrowMap={},
         thirdColumnArrowMap={},
     ):
         for filename in self.conflicted_files:

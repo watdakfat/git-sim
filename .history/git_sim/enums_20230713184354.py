@@ -20,8 +20,6 @@ class ColorByOptions(Enum):
     NOTLOCAL1 = "notlocal1"
     NOTLOCAL2 = "notlocal2"
 
-    # Reset the remotes in the local clone to the original remotes
-
 
 class StyleOptions(Enum):
     CLEAN = "clean"
